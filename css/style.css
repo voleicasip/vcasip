@@ -1,0 +1,156 @@
+:root {
+    --azul-escuro: #123c73;
+    --azul-principal: #1f5fae;
+    --azul-claro: #eaf3ff;
+    --amarelo: #f8c630;
+    --amarelo-claro: #fff3b0;
+    --branco: #ffffff;
+    --fundo: #f5f8fc;
+    --texto: #182230;
+    --cinza: #667085;
+    --borda: #d8e0eb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+.cabecalho {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 24px 0;
+}
+
+.cabecalho h1 {
+    color: var(--amarelo);
+    font-size: 2rem;
+}
+
+.cabecalho nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.cabecalho nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cabecalho nav a:hover {
+    color: var(--amarelo);
+}
+
+.destaque {
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul-principal),
+            var(--azul-escuro)
+        );
+    color: var(--branco);
+    padding: 80px 0;
+}
+
+.destaque h2 {
+    max-width: 700px;
+    font-size: 2.6rem;
+    line-height: 1.2;
+}
+
+.destaque p {
+    max-width: 650px;
+    margin-top: 18px;
+    font-size: 1.1rem;
+}
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.botao {
+    display: inline-block;
+    border-radius: 8px;
+    padding: 13px 22px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botao.principal {
+    background-color: var(--amarelo);
+    color: var(--azul-escuro);
+}
+
+.botao.secundario {
+    border: 2px solid var(--branco);
+    color: var(--branco);
+}
+
+.secao {
+    padding: 60px 0;
+}
+
+.secao:nth-child(even) {
+    background-color: var(--branco);
+}
+
+.secao h2 {
+    color: var(--azul-escuro);
+    margin-bottom: 14px;
+}
+
+.aviso {
+    border-left: 5px solid var(--amarelo);
+    background-color: var(--amarelo-claro);
+    border-radius: 6px;
+    padding: 18px;
+}
+
+.chamada-atleta {
+    background-color: var(--azul-claro);
+}
+
+.chamada-atleta .botao {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 30px 0;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .cabecalho nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .destaque {
+        padding: 55px 0;
+    }
+
+    .destaque h2 {
+        font-size: 2rem;
+    }
+}
