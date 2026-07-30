@@ -171,72 +171,166 @@ campoTelefone.addEventListener("input", () => {
     campoTelefone.value = formatarTelefone(campoTelefone.value);
 });
 
-formulario.addEventListener("submit", (evento) => {
-    evento.preventDefault();
+formulario.addEventListener(
+    "submit",
+    async (evento) => {
+        evento.preventDefault();
 
-    mensagemFormulario.className = "mensagem-formulario";
-    mensagemFormulario.textContent = "";
+        mensagemFormulario.className =
+            "mensagem-formulario";
 
-    const formularioValido = validarFormulario();
+        mensagemFormulario.textContent = "";
 
-    if (!formularioValido) {
-        mensagemFormulario.classList.add("erro");
+        const formularioValido = validarFormulario();
 
-        mensagemFormulario.textContent =
-            "Revise os campos destacados antes de enviar.";
+        if (!formularioValido) {
+            mensagemFormulario.classList.add("erro");
 
-        return;
+            mensagemFormulario.textContent =
+                "Revise os campos destacados antes de enviar.";
+
+            return;
+        }
+
+        if (
+            typeof API_VCASIP_URL === "undefined" ||
+            !API_VCASIP_URL.includes("script.google.com")
+        ) {
+            mensagemFormulario.classList.add("erro");
+
+            mensagemFormulario.textContent =
+                "A URL da API ainda não foi configurada.";
+
+            return;
+        }
+
+        const botaoEnviar =
+            formulario.querySelector(
+                'button[type="submit"]'
+            );
+
+        const textoOriginalBotao =
+            botaoEnviar.textContent;
+
+        botaoEnviar.disabled = true;
+        botaoEnviar.textContent =
+            "Enviando inscrição...";
+
+        const dadosInscricao = {
+            nomeAtleta:
+                document
+                    .getElementById("nome-atleta")
+                    .value
+                    .trim(),
+
+            dataNascimento:
+                document
+                    .getElementById("data-nascimento")
+                    .value,
+
+            escola:
+                document
+                    .getElementById("escola")
+                    .value
+                    .trim(),
+
+            turma:
+                document
+                    .getElementById("turma")
+                    .value
+                    .trim(),
+
+            experiencia:
+                document
+                    .getElementById("experiencia")
+                    .value,
+
+            posicao:
+                document
+                    .getElementById("posicao")
+                    .value,
+
+            nomeResponsavel:
+                document
+                    .getElementById("nome-responsavel")
+                    .value
+                    .trim(),
+
+            telefone:
+                document
+                    .getElementById("telefone")
+                    .value,
+
+            email:
+                document
+                    .getElementById("email")
+                    .value
+                    .trim(),
+
+            observacoes:
+                document
+                    .getElementById("observacoes")
+                    .value
+                    .trim()
+        };
+
+        try {
+            const corpoRequisicao =
+                new URLSearchParams(
+                    dadosInscricao
+                );
+
+            await fetch(
+                API_VCASIP_URL,
+                {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type":
+                            "application/x-www-form-urlencoded"
+                    },
+                    body: corpoRequisicao
+                }
+            );
+
+            mensagemFormulario.classList.add(
+                "sucesso"
+            );
+
+            mensagemFormulario.textContent =
+                "Inscrição enviada com sucesso! O cadastro ficará aguardando aprovação.";
+
+            formulario.reset();
+
+            campoIdade.value = "";
+            campoCategoria.value = "";
+
+            window.scrollTo({
+                top:
+                    mensagemFormulario
+                        .getBoundingClientRect()
+                        .top +
+                    window.scrollY -
+                    130,
+
+                behavior: "smooth"
+            });
+        } catch (erro) {
+            console.error(
+                "Erro ao enviar inscrição:",
+                erro
+            );
+
+            mensagemFormulario.classList.add(
+                "erro"
+            );
+
+            mensagemFormulario.textContent =
+                "Não foi possível enviar a inscrição. Verifique sua conexão e tente novamente.";
+        } finally {
+            botaoEnviar.disabled = false;
+            botaoEnviar.textContent =
+                textoOriginalBotao;
+        }
     }
-
-    const dadosInscricao = {
-        nomeAtleta:
-            document.getElementById("nome-atleta").value.trim(),
-
-        dataNascimento:
-            document.getElementById("data-nascimento").value,
-
-        idade:
-            document.getElementById("idade").value,
-
-        categoria:
-            document.getElementById("categoria").value,
-
-        escola:
-            document.getElementById("escola").value.trim(),
-
-        turma:
-            document.getElementById("turma").value.trim(),
-
-        experiencia:
-            document.getElementById("experiencia").value,
-
-        posicao:
-            document.getElementById("posicao").value,
-
-        nomeResponsavel:
-            document.getElementById("nome-responsavel").value.trim(),
-
-        telefone:
-            document.getElementById("telefone").value,
-
-        email:
-            document.getElementById("email").value.trim(),
-
-        observacoes:
-            document.getElementById("observacoes").value.trim(),
-
-        status: "Pendente"
-    };
-
-    console.log("Dados da inscrição:", dadosInscricao);
-
-    mensagemFormulario.classList.add("sucesso");
-
-    mensagemFormulario.textContent =
-        "Formulário preenchido corretamente. Nesta etapa, os dados ainda não foram enviados para a planilha.";
-
-    formulario.reset();
-
-    campoIdade.value = "";
-    campoCategoria.value = "";
-});
+);

@@ -516,6 +516,12 @@ textarea {
     color: rgba(255, 255, 255, 0.78);
 }
 
+.botao:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+    transform: none;
+}
+
 @media (max-width: 860px) {
     .botao-menu {
         display: block;
