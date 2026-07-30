@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Formulário de inscrição do VCasip"
+    >
+
+    <title>Inscrição | VCasip</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <div class="identidade">
+                <a href="index.html" class="logo">
+                    VCasip
+                </a>
+
+                <span class="subtitulo-logo">
+                    Vôlei Colégio Adventista de Sinop
+                </span>
+            </div>
+
+            <button
+                class="botao-menu"
+                id="botao-menu"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="menu" id="menu-principal">
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Projeto</a>
+                <a href="categorias.html">Categorias</a>
+                <a href="inscricao.html">Inscrição</a>
+                <a href="faq.html">Perguntas frequentes</a>
+                <a href="atleta.html">Área do atleta</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="topo-pagina">
+            <div class="container">
+                <span class="etiqueta">
+                    Inscrição
+                </span>
+
+                <h1>Faça parte do VCasip</h1>
+
+                <p>
+                    Preencha os dados abaixo. A inscrição será analisada
+                    antes da aprovação do cadastro.
+                </p>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="container container-formulario">
+                <form
+                    id="formulario-inscricao"
+                    class="formulario"
+                    novalidate
+                >
+                    <div class="bloco-formulario">
+                        <h2>Dados do atleta</h2>
+
+                        <div class="grade-formulario">
+                            <div class="campo campo-largo">
+                                <label for="nome-atleta">
+                                    Nome completo do atleta
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nome-atleta"
+                                    name="nomeAtleta"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                                <small class="mensagem-erro"></small>
+                            </div>
+
+                            <div class="campo">
+                                <label for="data-nascimento">
+                                    Data de nascimento
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="data-nascimento"
+                                    name="dataNascimento"
+                                    required
+                                >
+
+                                <small class="mensagem-erro"></small>
+                            </div>
+
+                            <div class="campo">
+                                <label for="idade">
+                                    Idade
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="idade"
+                                    name="idade"
+                                    readonly
+                                >
+                            </div>
+
+                            <div class="campo">
+                                <label for="categoria">
+                                    Categoria sugerida
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="categoria"
+                                    name="categoria"
+                                    readonly
+                                >
+                            </div>
+
+                            <div class="campo">
+                                <label for="escola">
+                                    Escola
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="escola"
+                                    name="escola"
+                                >
+                            </div>
+
+                            <div class="campo">
+                                <label for="turma">
+                                    Turma
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="turma"
+                                    name="turma"
+                                >
+                            </div>
+
+                            <div class="campo">
+                                <label for="experiencia">
+                                    Experiência com voleibol
+                                </label>
+
+                                <select
+                                    id="experiencia"
+                                    name="experiencia"
+                                    required
+                                >
+                                    <option value="">
+                                        Selecione
+                                    </option>
+
+                                    <option value="Nenhuma">
+                                        Nenhuma
+                                    </option>
+
+                                    <option value="Iniciante">
+                                        Iniciante
+                                    </option>
+
+                                    <option value="Intermediária">
+                                        Intermediária
+                                    </option>
+
+                                    <option value="Avançada">
+                                        Avançada
+                                    </option>
+                                </select>
+
+                                <small class="mensagem-erro"></small>
+                            </div>
+
+                            <div class="campo">
+                                <label for="posicao">
+                                    Posição de interesse
+                                </label>
+
+                                <select
+                                    id="posicao"
+                                    name="posicao"
+                                >
+                                    <option value="">
+                                        Ainda não definida
+                                    </option>
+
+                                    <option value="Levantador">
+                                        Levantador
+                                    </option>
+
+                                    <option value="Ponteiro">
+                                        Ponteiro
+                                    </option>
+
+                                    <option value="Oposto">
+                                        Oposto
+                                    </option>
+
+                                    <option value="Central">
+                                        Central
+                                    </option>
+
+                                    <option value="Líbero">
+                                        Líbero
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bloco-formulario">
+                        <h2>Dados do responsável</h2>
+
+                        <div class="grade-formulario">
+                            <div class="campo campo-largo">
+                                <label for="nome-responsavel">
+                                    Nome completo do responsável
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nome-responsavel"
+                                    name="nomeResponsavel"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                                <small class="mensagem-erro"></small>
+                            </div>
+
+                            <div class="campo">
+                                <label for="telefone">
+                                    Telefone
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    placeholder="(66) 99999-9999"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                                <small class="mensagem-erro"></small>
+                            </div>
+
+                            <div class="campo">
+                                <label for="email">
+                                    E-mail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                                <small class="mensagem-erro"></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bloco-formulario">
+                        <h2>Informações complementares</h2>
+
+                        <div class="campo">
+                            <label for="observacoes">
+                                Observações importantes
+                            </label>
+
+                            <textarea
+                                id="observacoes"
+                                name="observacoes"
+                                rows="5"
+                                placeholder="Informe restrições, necessidades ou outras observações relevantes."
+                            ></textarea>
+                        </div>
+
+                        <div class="campo-checkbox">
+                            <input
+                                type="checkbox"
+                                id="aceite-termos"
+                                name="aceiteTermos"
+                                required
+                            >
+
+                            <label for="aceite-termos">
+                                Confirmo que as informações fornecidas são
+                                verdadeiras e autorizo a análise da inscrição.
+                            </label>
+                        </div>
+
+                        <small
+                            id="erro-termos"
+                            class="mensagem-erro"
+                        ></small>
+                    </div>
+
+                    <div
+                        id="mensagem-formulario"
+                        class="mensagem-formulario"
+                        role="alert"
+                    ></div>
+
+                    <button
+                        type="submit"
+                        class="botao botao-amarelo botao-enviar"
+                    >
+                        Enviar inscrição
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <div>
+                <strong>VCasip</strong>
+
+                <p>Vôlei Colégio Adventista de Sinop</p>
+            </div>
+
+            <div>
+                <p>Contato: (66) 99631-5530</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/inscricao.js"></script>
+</body>
+</html>

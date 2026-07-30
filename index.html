@@ -20,12 +20,27 @@
 
 <body>
     <header class="cabecalho">
-        <div class="container">
-            <h1>VCasip</h1>
+        <div class="container cabecalho-conteudo">
+            <div class="identidade">
+                <a href="index.html" class="logo">
+                    VCasip
+                </a>
 
-            <p>Vôlei Colégio Adventista de Sinop</p>
+                <span class="subtitulo-logo">
+                    Vôlei Colégio Adventista de Sinop
+                </span>
+            </div>
 
-            <nav>
+            <button
+                class="botao-menu"
+                id="botao-menu"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="menu" id="menu-principal">
                 <a href="index.html">Início</a>
                 <a href="sobre.html">Projeto</a>
                 <a href="categorias.html">Categorias</a>
@@ -37,78 +52,229 @@
     </header>
 
     <main>
-        <section class="destaque">
-            <div class="container">
-                <h2>Aprenda, evolua e faça parte do nosso time</h2>
+        <section class="hero">
+            <div class="container hero-conteudo">
+                <div class="hero-texto">
+                    <span class="etiqueta">
+                        Voleibol para crianças e adolescentes
+                    </span>
 
-                <p>
-                    Projeto de voleibol para crianças e adolescentes
-                    de 6 a 17 anos.
-                </p>
+                    <h1>
+                        Aprenda, evolua e faça parte do nosso time
+                    </h1>
 
-                <div class="acoes">
-                    <a class="botao principal" href="inscricao.html">
-                        Fazer inscrição
-                    </a>
+                    <p>
+                        O VCasip é um projeto de voleibol voltado para
+                        crianças e adolescentes de 6 a 17 anos, com
+                        atividades organizadas por idade e nível de
+                        desenvolvimento.
+                    </p>
 
-                    <a class="botao secundario" href="sobre.html">
-                        Conhecer o projeto
-                    </a>
+                    <div class="grupo-botoes">
+                        <a
+                            class="botao botao-amarelo"
+                            href="inscricao.html"
+                        >
+                            Fazer inscrição
+                        </a>
+
+                        <a
+                            class="botao botao-contorno"
+                            href="sobre.html"
+                        >
+                            Conhecer o projeto
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-cartao">
+                    <h2>Categorias</h2>
+
+                    <ul>
+                        <li><strong>A:</strong> 15 a 17 anos</li>
+                        <li><strong>B:</strong> 12 a 14 anos</li>
+                        <li><strong>C:</strong> 10 a 11 anos</li>
+                        <li><strong>D:</strong> 8 a 9 anos</li>
+                        <li><strong>E:</strong> 6 a 7 anos</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section class="secao">
             <div class="container">
-                <h2>Sobre o VCasip</h2>
+                <div class="cabecalho-secao">
+                    <span class="etiqueta etiqueta-azul">
+                        Sobre o projeto
+                    </span>
 
-                <p>
-                    Este espaço será utilizado para apresentar os objetivos,
-                    a metodologia e as principais informações do projeto.
-                </p>
-            </div>
-        </section>
+                    <h2>Conheça o VCasip</h2>
 
-        <section class="secao">
-            <div class="container">
-                <h2>Conheça o treinador</h2>
+                    <p>
+                        O projeto oferece treinamento de voleibol adaptado
+                        à idade dos atletas, desenvolvendo fundamentos,
+                        cooperação, disciplina e evolução esportiva.
+                    </p>
+                </div>
 
-                <p>
-                    Este espaço será utilizado futuramente para apresentar
-                    o treinador, sua experiência e sua proposta de trabalho.
-                </p>
-            </div>
-        </section>
+                <div class="grade-cards">
+                    <article class="card">
+                        <div class="icone-card">🏐</div>
 
-        <section class="secao">
-            <div class="container">
-                <h2>Fotos dos treinos</h2>
+                        <h3>Fundamentos</h3>
 
-                <div class="aviso">
-                    As fotografias dos treinos serão adicionadas futuramente.
+                        <p>
+                            Treinos de saque, ataque, defesa, passe,
+                            levantamento e bloqueio.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icone-card">📊</div>
+
+                        <h3>Acompanhamento</h3>
+
+                        <p>
+                            Atletas das categorias A e B poderão acompanhar
+                            seu histórico e evolução.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icone-card">🤝</div>
+
+                        <h3>Trabalho em equipe</h3>
+
+                        <p>
+                            Desenvolvimento técnico, responsabilidade,
+                            respeito e cooperação.
+                        </p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="secao chamada-atleta">
+        <section class="secao secao-azul-claro">
+            <div class="container duas-colunas">
+                <div>
+                    <span class="etiqueta etiqueta-azul">
+                        Treinador
+                    </span>
+
+                    <h2>Apresentação do treinador</h2>
+
+                    <p>
+                        Este espaço será utilizado para apresentar o
+                        treinador, sua experiência, formação, objetivos
+                        e proposta de trabalho no projeto.
+                    </p>
+
+                    <a
+                        href="sobre.html"
+                        class="link-destaque"
+                    >
+                        Ver apresentação completa
+                    </a>
+                </div>
+
+                <div class="cartao-placeholder">
+                    <span>Espaço reservado para apresentação</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao">
             <div class="container">
-                <h2>Área do atleta</h2>
+                <div class="cabecalho-secao">
+                    <span class="etiqueta etiqueta-azul">
+                        Galeria
+                    </span>
 
-                <p>
-                    Consulte seu histórico de treinos, observações e evolução.
-                </p>
+                    <h2>Fotos dos treinos</h2>
 
-                <a class="botao principal" href="atleta.html">
+                    <p>
+                        A galeria será ativada futuramente para mostrar
+                        registros dos treinos e atividades do projeto.
+                    </p>
+                </div>
+
+                <div class="galeria-placeholder">
+                    <div>Foto futura</div>
+                    <div>Foto futura</div>
+                    <div>Foto futura</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao chamada">
+            <div class="container chamada-conteudo">
+                <div>
+                    <span class="etiqueta">
+                        Área exclusiva
+                    </span>
+
+                    <h2>Área do atleta</h2>
+
+                    <p>
+                        Consulte seu histórico de treinos, observações,
+                        gráficos e informações da sua categoria.
+                    </p>
+                </div>
+
+                <a
+                    href="atleta.html"
+                    class="botao botao-amarelo"
+                >
                     Entrar na área do atleta
                 </a>
             </div>
         </section>
+
+        <section class="secao">
+            <div class="container">
+                <div class="cabecalho-secao">
+                    <span class="etiqueta etiqueta-azul">
+                        Contato
+                    </span>
+
+                    <h2>Fale com o VCasip</h2>
+
+                    <p>
+                        Entre em contato para tirar dúvidas sobre inscrições,
+                        categorias e funcionamento do projeto.
+                    </p>
+                </div>
+
+                <div class="contato-card">
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <p>(66) 99631-5530</p>
+                    </div>
+
+                    <a
+                        class="botao botao-azul"
+                        href="https://wa.me/5566996315530"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Abrir WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>VCasip — Vôlei Colégio Adventista de Sinop</p>
-            <p>Contato: (66) 99631-5530</p>
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <div>
+                <strong>VCasip</strong>
+
+                <p>Vôlei Colégio Adventista de Sinop</p>
+            </div>
+
+            <div>
+                <p>Contato: (66) 99631-5530</p>
+            </div>
         </div>
     </footer>
 
