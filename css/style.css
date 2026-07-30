@@ -583,3 +583,138 @@ textarea {
         padding: 22px;
     }
 }
+
+.oculto {
+    display: none !important;
+}
+
+.area-acesso {
+    min-height: 70vh;
+}
+
+.formulario-acesso {
+    max-width: 520px;
+    margin: 2rem auto;
+}
+
+.formulario-acesso label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.formulario-acesso input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.95rem 1rem;
+    border: 1px solid #ccd5e0;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+}
+
+.formulario-acesso .botao {
+    width: 100%;
+}
+
+.painel-atleta {
+    margin-top: 2rem;
+}
+
+.perfil-atleta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.secao-painel {
+    margin-top: 2.5rem;
+}
+
+.grade-indicadores,
+.grade-estatisticas {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.indicador {
+    text-align: center;
+}
+
+.indicador strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 2rem;
+}
+
+.indicador span {
+    color: #566270;
+}
+
+.cartao-estatistica strong {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+}
+
+.cartao-estatistica span {
+    display: block;
+    margin-top: 0.25rem;
+    color: #566270;
+}
+
+.lista-observacoes {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.observacao-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.observacao-cabecalho h3 {
+    margin: 0;
+}
+
+.observacao-cabecalho span {
+    color: #566270;
+    font-size: 0.9rem;
+}
+
+.observacao-atleta p {
+    margin: 0.65rem 0 0;
+}
+
+.estado-vazio {
+    text-align: center;
+    color: #566270;
+}
+
+@media (max-width: 600px) {
+    .perfil-atleta {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .perfil-atleta .botao {
+        width: 100%;
+    }
+
+    .observacao-cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

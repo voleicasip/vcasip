@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Área individual do atleta VCasip"
+    >
+
+    <title>Área do Atleta | VCasip</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <a
+                href="index.html"
+                class="logo"
+            >
+                VCasip
+            </a>
+
+            <button
+                class="botao-menu"
+                id="botao-menu"
+                type="button"
+                aria-label="Abrir menu"
+            >
+                ☰
+            </button>
+
+            <nav
+                class="menu"
+                id="menu"
+            >
+                <a href="index.html">Início</a>
+                <a href="inscricao.html">Inscrição</a>
+                <a href="atleta.html">Área do atleta</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao area-acesso">
+            <div class="container">
+                <div class="cabecalho-secao">
+                    <span class="etiqueta">
+                        Área individual
+                    </span>
+
+                    <h1>Área do atleta</h1>
+
+                    <p>
+                        Digite o código entregue pela administração
+                        para consultar seus dados.
+                    </p>
+                </div>
+
+                <form
+                    id="formulario-acesso"
+                    class="cartao formulario-acesso"
+                >
+                    <label for="codigo-atleta">
+                        Código de acesso
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigo-atleta"
+                        name="codigo"
+                        maxlength="12"
+                        autocomplete="off"
+                        placeholder="Exemplo: H7XQ4K9P2MWR"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="botao botao-primario"
+                    >
+                        Acessar meus dados
+                    </button>
+
+                    <div
+                        id="mensagem-acesso"
+                        class="mensagem-formulario"
+                        aria-live="polite"
+                    ></div>
+                </form>
+
+                <section
+                    id="painel-atleta"
+                    class="painel-atleta oculto"
+                >
+                    <div class="cartao perfil-atleta">
+                        <div>
+                            <span class="etiqueta">
+                                Perfil
+                            </span>
+
+                            <h2 id="nome-atleta">
+                                Nome do atleta
+                            </h2>
+
+                            <p id="categoria-atleta"></p>
+                            <p id="posicao-atleta"></p>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="botao-sair"
+                            class="botao botao-secundario"
+                        >
+                            Sair
+                        </button>
+                    </div>
+
+                    <section class="secao-painel">
+                        <h2>Frequência</h2>
+
+                        <div class="grade-indicadores">
+                            <article class="cartao indicador">
+                                <strong id="frequencia-percentual">
+                                    0%
+                                </strong>
+                                <span>Frequência</span>
+                            </article>
+
+                            <article class="cartao indicador">
+                                <strong id="presencas-total">
+                                    0
+                                </strong>
+                                <span>Presenças</span>
+                            </article>
+
+                            <article class="cartao indicador">
+                                <strong id="ausencias-total">
+                                    0
+                                </strong>
+                                <span>Ausências</span>
+                            </article>
+
+                            <article class="cartao indicador">
+                                <strong id="justificadas-total">
+                                    0
+                                </strong>
+                                <span>Justificadas</span>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="secao-painel">
+                        <h2>Estatísticas gerais</h2>
+
+                        <div
+                            id="grade-estatisticas"
+                            class="grade-estatisticas"
+                        ></div>
+                    </section>
+
+                    <section class="secao-painel">
+                        <h2>Orientações e metas</h2>
+
+                        <div
+                            id="lista-observacoes"
+                            class="lista-observacoes"
+                        ></div>
+                    </section>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>
+                VCasip — Vôlei Colégio Adventista de Sinop
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/atleta.js"></script>
+</body>
+</html>
